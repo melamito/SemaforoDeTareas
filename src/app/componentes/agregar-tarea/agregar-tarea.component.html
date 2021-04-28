@@ -1,4 +1,5 @@
-<form>
+<div class="cont">
+  <form method="get" action="tareas">
     <div class="cuadrito">
       <label for="titulo" class="label">Titulo</label>
       <div>
@@ -7,21 +8,27 @@
     </div>
 
     <div class="cuadrito">
-      <label for="estado">Estado</label>
+      <mat-label for="estado">Estado</mat-label>
       <div class = "input2">
-        <select id="Estado" required="true">
-          <option>Seleccione estado</option>
-          <option value="1">Iniciado</option>
-          <option value="2">En proceso</option>
-          <option value="3">Terminado</option>
-        </select>
+        <mat-select [value]="estadoSeleccionado" (selectionChange)="estadoSeleccionado = $event.value">
+          <mat-option *ngFor="let estado of estados" [value]="estado">
+            {{ estado }}
+          </mat-option>
+        </mat-select>
       </div>
     </div>
 
-    <div class="botones">
-      <button class="btn" type="reset"> Cancelar </button> 
-      <a [routerLink]="['/tareas']" routerLinkActive="router-link-active" >
-        <button class="btn" type="submit"> subir</button>
-      </a>  
-    </div>
+    
+
+    <ul class="botones">
+      <li>
+        <button class="btn" type="reset"> Cancelar </button> 
+      </li>
+      <li>
+        <button class="btn" id="subir" type="submit"> subir</button> 
+      </li>
+    </ul>
   </form>
+
+  <script src="agregar-tarea.component.ts" async defer></script>
+</div>

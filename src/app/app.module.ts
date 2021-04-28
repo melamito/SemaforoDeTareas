@@ -7,6 +7,9 @@ import { AgregarTareaComponent } from './componentes/agregar-tarea/agregar-tarea
 import { LitaTareasComponent } from './componentes/lita-tareas/lita-tareas.component';
 import { EditarTareaComponent } from './componentes/editar-tarea/editar-tarea.component';
 import { HeaderComponent } from './componentes/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HeaderComponent } from './componentes/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, SimpleChange, Input } from '@angular/core';
 
 @Component({
   selector: 'app-agregar-tarea',
   templateUrl: './agregar-tarea.component.html',
   styleUrls: ['./agregar-tarea.component.scss']
 })
+
+
+
 export class AgregarTareaComponent implements OnInit {
 
-  constructor() { }
+  estadoSeleccionado:any = '';
 
-  ngOnInit(): void {
+  estados:any[]= ['Iniciado','Enproceso','Terminado'];
+
+  ngOnInit():void{
+    let estado=this.estadoSeleccionado;
+    console.log(estado);
   }
+  
 
+  
 }
+
+ 
+
